@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a12" />
+      <stop offset="50%" stop-color="#0d1527" />
+      <stop offset="100%" stop-color="#04060d" />
+    </linearGradient>
+
+    <linearGradient id="spiderRedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff3b56" />
+      <stop offset="50%" stop-color="#e61937" />
+      <stop offset="100%" stop-color="#990a1d" />
+    </linearGradient>
+
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+
+    <filter id="glowCyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="emblemShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+
+    <pattern id="gridPattern2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" opacity="0.6" />
+      <circle cx="40" cy="40" r="1" fill="#38bdf8" opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" rx="32" fill="url(#bgGrad2)" />
+  <rect width="800" height="800" rx="32" fill="url(#gridPattern2)" />
+
+  <!-- CAD 3D Wireframe Cube & Coordinate Grid -->
+  <g opacity="0.35" stroke="#00f2fe" stroke-width="1.2" fill="none">
+    <!-- Isometric Cube Frame behind Spider -->
+    <!-- Top Face -->
+    <polygon points="400,100 560,180 400,260 240,180" stroke-dasharray="6,4" />
+    <!-- Vertical Edges -->
+    <line x1="240" y1="180" x2="240" y2="380" stroke-dasharray="6,4" />
+    <line x1="560" y1="180" x2="560" y2="380" stroke-dasharray="6,4" />
+    <line x1="400" y1="260" x2="400" y2="460" stroke-dasharray="6,4" />
+    <!-- Bottom Face -->
+    <polygon points="400,460 560,380 400,300 240,380" stroke-dasharray="6,4" />
+
+    <!-- Drafting Compass Ring -->
+    <circle cx="400" cy="280" r="210" stroke-dasharray="3,6" opacity="0.7" />
+    <circle cx="400" cy="280" r="250" stroke-dasharray="8,6" opacity="0.4" />
+  </g>
+
+  <!-- 3D Coordinate Axes (X, Y, Z) -->
+  <g stroke-width="2" opacity="0.8">
+    <!-- Z-Axis (Vertical Up) -->
+    <line x1="400" y1="280" x2="400" y2="60" stroke="#00f2fe" />
+    <polygon points="400,50 394,65 406,65" fill="#00f2fe" />
+    <text x="412" y="65" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" fill="#00f2fe">+Z (UP)</text>
+
+    <!-- X-Axis (Bottom Right Isometric) -->
+    <line x1="400" y1="280" x2="650" y2="405" stroke="#ff3b56" />
+    <polygon points="660,410 644,400 650,415" fill="#ff3b56" />
+    <text x="635" y="430" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" fill="#ff3b56">+X</text>
+
+    <!-- Y-Axis (Bottom Left Isometric) -->
+    <line x1="400" y1="280" x2="150" y2="405" stroke="#22c55e" />
+    <polygon points="140,410 150,415 156,400" fill="#22c55e" />
+    <text x="145" y="430" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" fill="#22c55e">+Y</text>
+  </g>
+
+  <!-- CAD Annotations & Dimension Markers -->
+  <g font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8" opacity="0.8">
+    <text x="100" y="160">GEO.PARAMETRIC: SPIDER</text>
+    <text x="100" y="180">TOLERANCE: ±0.001mm</text>
+    <text x="590" y="160">SCALE: 1:1 [3D]</text>
+    <text x="590" y="180">NODES: 32 | FACETS: 64</text>
+    <!-- Origin marker -->
+    <circle cx="400" cy="280" r="5" fill="#00f2fe" filter="url(#glowCyan)" />
+  </g>
+
+  <!-- THE SPIDER-MAN CHEST EMBLEM -->
+  <g filter="url(#emblemShadow)">
+    <!-- Central Head & Mandibles -->
+    <path d="M 390,165 
+             L 380,140 L 392,148 L 400,158 L 408,148 L 420,140 L 410,165 
+             L 418,185 L 382,185 Z" 
+          fill="url(#spiderRedGrad)" 
+          stroke="#ff8093" stroke-width="1.5" />
+
+    <!-- Thorax / Upper Body -->
+    <path d="M 382,192 
+             L 418,192 
+             L 426,235 
+             L 400,255 
+             L 374,235 Z" 
+          fill="url(#spiderRedGrad)" 
+          stroke="#ff8093" stroke-width="1.5" />
+
+    <!-- Abdomen / Lower Body (Elongated Sharp Diamond) -->
+    <path d="M 400,265 
+             L 424,285 
+             L 418,350 
+             L 400,395 
+             L 382,350 
+             L 376,285 Z" 
+          fill="url(#spiderRedGrad)" 
+          stroke="#ff8093" stroke-width="1.5" />
+
+    <!-- 8 SPIDER LEGS (Angular, Dynamic, Heroic Spider-Man Styling) -->
+    
+    <!-- UPPER LEGS (Pair 1 - Topmost high reach) -->
+    <!-- Left Top Leg -->
+    <path d="M 382,200 
+             L 300,130 
+             L 245,110 
+             L 240,118 
+             L 292,142 
+             L 376,215 Z" 
+          fill="url(#spiderRedGrad)" stroke="#ff8093" stroke-width="1.2" />
+    <!-- Right Top Leg -->
+    <path d="M 418,200 
+             L 500,130 
+             L 555,110 
+             L 560,118 
+             L 508,142 
+             L 424,215 Z" 
+          fill="url(#spiderRedGrad)" stroke="#ff8093" stroke-width="1.2" />
+
+    <!-- UPPER LEGS (Pair 2 - Upper Lateral) -->
+    <!-- Left Leg 2 -->
+    <path d="M 378,225 
+             L 270,195 
+             L 205,210 
+             L 202,218 
+             L 265,206 
+             L 374,238 Z" 
+          fill="url(#spiderRedGrad)" stroke="#ff8093" stroke-width="1.2" />
+    <!-- Right Leg 2 -->
+    <path d="M 422,225 
+             L 530,195 
+             L 595,210 
+             L 598,218 
+             L 535,206 
+             L 426,238 Z" 
+          fill="url(#spiderRedGrad)" stroke="#ff8093" stroke-width="1.2" />
+
+    <!-- LOWER LEGS (Pair 3 - Lower Lateral Sweeping Down) -->
+    <!-- Left Leg 3 -->
+    <path d="M 378,255 
+             L 260,290 
+             L 220,380 
+             L 226,384 
+             L 268,298 
+             L 380,268 Z" 
+          fill="url(#spiderRedGrad)" stroke="#ff8093" stroke-width="1.2" />
+    <!-- Right Leg 3 -->
+    <path d="M 422,255 
+             L 540,290 
+             L 580,380 
+             L 574,384 
+             L 532,298 
+             L 420,268 Z" 
+          fill="url(#spiderRedGrad)" stroke="#ff8093" stroke-width="1.2" />
+
+    <!-- LOWER LEGS (Pair 4 - Bottommost Sharp Stance) -->
+    <!-- Left Leg 4 -->
+    <path d="M 382,290 
+             L 300,360 
+             L 285,465 
+             L 293,468 
+             L 310,368 
+             L 386,305 Z" 
+          fill="url(#spiderRedGrad)" stroke="#ff8093" stroke-width="1.2" />
+    <!-- Right Leg 4 -->
+    <path d="M 418,290 
+             L 500,360 
+             L 515,465 
+             L 507,468 
+             L 490,368 
+             L 414,305 Z" 
+          fill="url(#spiderRedGrad)" stroke="#ff8093" stroke-width="1.2" />
+
+    <!-- CAD Blueprint Wireframe Lines Overlaid onto the Spider -->
+    <g stroke="#00f2fe" stroke-width="1.2" fill="none" opacity="0.8">
+      <!-- Spine Axis -->
+      <line x1="400" y1="150" x2="400" y2="395" stroke-dasharray="4,3" />
+      
+      <!-- Thorax Facet Lines -->
+      <line x1="400" y1="192" x2="426" y2="235" />
+      <line x1="400" y1="192" x2="374" y2="235" />
+      <line x1="400" y1="255" x2="400" y2="192" />
+
+      <!-- Abdomen Facet Lines -->
+      <line x1="400" y1="265" x2="418" y2="350" />
+      <line x1="400" y1="265" x2="382" y2="350" />
+      <line x1="376" y1="285" x2="424" y2="285" stroke-dasharray="2,2" />
+      <line x1="382" y1="350" x2="418" y2="350" stroke-dasharray="2,2" />
+
+      <!-- Leg Joint Nodes -->
+      <circle cx="300" cy="130" r="3" fill="#00f2fe" filter="url(#glowCyan)" />
+      <circle cx="500" cy="130" r="3" fill="#00f2fe" filter="url(#glowCyan)" />
+      <circle cx="270" cy="195" r="3" fill="#00f2fe" filter="url(#glowCyan)" />
+      <circle cx="530" cy="195" r="3" fill="#00f2fe" filter="url(#glowCyan)" />
+      <circle cx="260" cy="290" r="3" fill="#00f2fe" filter="url(#glowCyan)" />
+      <circle cx="540" cy="290" r="3" fill="#00f2fe" filter="url(#glowCyan)" />
+      <circle cx="300" cy="360" r="3" fill="#00f2fe" filter="url(#glowCyan)" />
+      <circle cx="500" cy="360" r="3" fill="#00f2fe" filter="url(#glowCyan)" />
+    </g>
+  </g>
+
+  <!-- BRAND TYPOGRAPHY -->
+  <g text-anchor="middle">
+    <text x="400" y="625" font-family="'Inter', 'Montserrat', -apple-system, sans-serif" font-weight="900" font-size="64" letter-spacing="-1">
+      <tspan fill="#ffffff">Spidy</tspan><tspan fill="#ff334b">CAD</tspan>
+    </text>
+
+    <text x="400" y="665" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="13" font-weight="600" fill="#38bdf8" letter-spacing="7">
+      PARAMETRIC 3D CAD ENGINE
+    </text>
+
+    <!-- Technical Dimension Bar -->
+    <g opacity="0.8">
+      <line x1="220" y1="695" x2="370" y2="695" stroke="#38bdf8" stroke-width="2" />
+      <rect x="382" y="690" width="36" height="10" rx="3" fill="#1e293b" stroke="#ff334b" stroke-width="1.5" />
+      <text x="400" y="698" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="bold" fill="#ff334b" text-anchor="middle">v1.0</text>
+      <line x1="430" y1="695" x2="580" y2="695" stroke="#38bdf8" stroke-width="2" />
+    </g>
+  </g>
+</svg>
